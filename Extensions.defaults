@@ -1,0 +1,35 @@
+#Putty-ssh lauches putty.exe (assuming it is located in default program files
+#directory) and passes ${1} as argument. ${1} references first column in the 
+#grid, ie host.
+Putty-ssh=C:\Program Files\PuTTY\putty.exe ${1}
+
+#Putty-ssh lauches putty.exe (assuming it is located in default program files
+#directory. If not, you have to adapt to fit your needs) and passes 
+#${3}@{1} -pw ${4} as argument. ${3} references third column in the grid ie login
+#${1} references first column in the grid,ie host. 
+#${4} references fourth column in the grid, ie password.
+#This way, putty is lauched with information taken from the currently select line
+#in the grid and literally passes arguments:
+#<login>@<host> -pw <password>
+Putty-autologin=C:\Program Files\PuTTY\putty.exe ${3}@${1} -pw ${4}
+
+#you can also use one-level submenus, like below. You need to leave an empty line to mark the end of submenu
+[SSH]
+Putty-ssh=C:\Program Files\PuTTY\putty.exe ${1}
+Putty-autologin=C:\Program Files\PuTTY\putty.exe ${3}@${1} -pw ${4}
+
+[MacOS samples]
+Filezilla=/Applications/Filezilla.app/Contents/MacOS/Filezilla ${1}
+#below lines are samples AppleScript scripts, thaht invokes a new terminal tab,
+#and uses MacOSX system commands for ftp, ssh (open-ssh client), telnet.
+#You can create your very own AppleScripts scripts to launch terminal command-line tools.
+applescript-ftp=osascript  ftp-mac.scpt ${1} ${3} ${4}
+applescript-ssh=osascript ssh-mac.scpt ${1} ${3} ${4}
+applescript-telnet=osascript telnet-mac.scpt ${1} ${3} ${4}
+#If you want to organize your extensions in the context menu, you can add separators
+#using the special keyword Context_Menu_Separator on a line, just like below.
+Context_Menu_Separator
+
+#Once you've read all the comments before, I'm sure you will understand that the
+#line below can now be removed !
+See Settings Menu to customize tools !
