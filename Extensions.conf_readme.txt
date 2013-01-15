@@ -1,5 +1,0 @@
-check in you Application Data directory !
-on WinXP and 2003, commonly set to "C:\Documents and Settings\<your userid>\Application Data\PyNBM\Extensions.conf"
-on Win7 and 2008, commonly set to "C:\Users\<your userid>\AppData\Local\PyNBM\Extensions.conf"
-
-Ensure to enable display of hidden files in your explorer, otherwise you might not see the Application Data or AppData directory.
